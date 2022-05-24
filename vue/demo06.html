@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    <ul>
+        <li v-for="name in names">
+            {{name}}
+        </li>
+        <li v-for="value in user">
+            {{value}}
+        </li>
+    </ul>
+</div>
+
+
+</body>
+<script>
+    new Vue({
+        el:"div",
+        data:{
+            names:['zs','ls','ww'],
+            user:{name:"压机否",age:18}
+        }
+    });
+</script>
+</html>

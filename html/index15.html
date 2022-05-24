@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<!--
+    变量  存放 单个的值
+    let name = 'zs';
+    数组
+    let arr = ['zs','ls','ww','wemaz','ergouzi'];
+    对象
+    存放某个人的信息 例如注册的信息
+    学生管理系统 存放学生的信息  学号 年龄 姓名 手机号 性别
+    let zs = {name:'zs',age:18,tel:'138383838'};
+    let obj = {name:'wc','age':18,gender:'mu'};
+    {}里面描述的内容就是对象的信息
+    //对象  属性和方法组成的  属性代表状态方法表示动作
+ -->
+<script>
+    //定义了一个对象 这个对象是yjf 他里面有 name age gender这三个属性
+    //name的值是 '压机否'....
+    let yjf = {
+        name:'压机否',age:18,gender:'男',
+        run:function (){
+            alert("你的对象跑了 快啊");
+        },
+        jump:function (){
+            alert("你的对象跳了 好年轻啊");
+        }
+    };
+    //yjf.run();
+    //yjf.jump();
+    for (let k in yjf) {
+        alert(k);
+        alert(yjf[k]);
+    }
+</script>
+
+</html>

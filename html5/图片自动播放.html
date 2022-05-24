@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>无标题文档</title>
+		<style>
+			img {
+				width: 300px;
+				height: 450px;
+				vertical-align: top;
+			}
+
+			#wrap {
+				width: 300px;
+				margin: 50px auto;
+				height: 450px;
+				position: relative;
+				border: 10px solid #000;
+			}
+
+			.btns {
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 210px;
+				border: 1px solid #999;
+				background: #fff;
+				font-family: "宋体";
+				opacity: .4;
+			}
+
+			.btns:hover {
+				opacity: 1;
+			}
+
+			.left {
+				left: 10px;
+			}
+
+			.right {
+				right: 10px;
+			}
+
+			#navs {
+				position: absolute;
+				bottom: 10px;
+				width: 100%;
+				left: 0;
+				height: 20px;
+				text-align: center;
+			}
+
+			#navs a {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background: #fff;
+				vertical-align: top;
+				border-radius: 50%;
+			}
+
+			#navs a.active {
+				background: #f60;
+			}
+		</style>
+		<script>
+			var arrUls = ["img/img1.jpeg", "img/img2.jpeg", "img/img3.jpeg", "img/img4.jpeg"];
+			window.onload = function() {
+				var wrap = document.getElementById("wrap");
+				var btns = document.getElementsByTagName("input");
+				var nav = document.getElementById("navs");
+				var navs = nav.getElementsByTagName("a");
+				var img = document.getElementsByTagName("img")[0];
+				var now = 0;
+				var timer = 0;
+				timer = setInterval(next, 1000);
+				for (var i = 0; i < navs.length; i++) {
+					navs[i].index = i;
+					navs[i].onmouseover = function() {
+						now = this.index;
+						tab();
+					};
+				}
+				btns[0].onclick = function() {
+					now--;
+					if (now < 0) {
+						now = arrUls.length - 1;
+					}
+					tab();
+				};
+				btns[1].onclick = next;
+
+				function next() {
+					now++;
+					if (now > arrUls.length - 1) {
+						now = 0;
+					}
+					tab();
+				};
+
+				function tab() {
+					for (var i = 0; i < navs.length; i++) {
+						navs[i].className = "";
+					}
+					navs[now].className = "active";
+					img.src = arrUls[now];
+				}
+				wrap.onmouseover = function() {
+					clearInterval(timer);
+				};
+				wrap.onmouseout = function() {
+					timer = setInterval(next, 1000);
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<!--
+	数字的取值范围 0 - 5；
+-->
+		<div id="wrap">
+			<img src="img/img1.jpeg" />
+			<input type="button" value="&lt;&lt;" class="btns left" />
+			<input type="button" value="&gt;&gt;" class="btns right" />
+			<nav id="navs">
+				<a href="javascript:;" class="active"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</nav>
+		</div>
+	</body>
+</html>

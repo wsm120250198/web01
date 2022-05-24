@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Dog(name,age,gender){
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.jiao = function(){
+            alert(this.name + "在叫");
+        }
+    }
+
+    let wc = new Dog('旺财',3,'公');
+    let xq = new Dog('小强',4,'母');
+    let dz = new Dog('大壮',2,'公');
+    wc.jiao();
+
+</script>
+</html>

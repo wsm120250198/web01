@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="div">
+    <form>
+        用户名:<input type="text" name="username" v-model="username">
+        <br/>
+        密码:<input type="text" name="age" v-model="age">
+        性别:<input type="text" name="age" v-model="gender">
+    </form>
+</div>
+
+</body>
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            username: 'zs',
+            age: 18,
+            gender:'男'
+        }
+    });
+</script>
+</html>

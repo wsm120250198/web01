@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+
+<script>
+    //使用时候会去使用一个函数呢？
+    //为什么要有函数这种东西？
+    //参数
+    //我们写函数的时候就可以这么来声明了
+    //function 函数的名称(形式参数1,形式参数2...形式参数n){};
+    //计算1-100的和
+    //格式化的快捷键 ctrl + alt + L 是跟QQ的锁定QQ的快捷键冲突
+    //break 退出循环 continue退出当前循环,进入下一次循环 return结束函数
+    // break continue return;
+    // 一个函数如果自己调用自己 就是递归
+    //使用递归 计算 1 +2 + 3 + ... + 100的和
+    //函数自己调用自己的过程
+    function getSum(end){
+        if(end == 1){
+            return 1;
+        }else{
+           return getSum(end - 1) + end;
+        }
+    }
+    let sum = getSum(100);
+    console.log(sum);
+
+</script>
+
+</html>

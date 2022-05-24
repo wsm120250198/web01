@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    //日期计算
+    //获取当前时间的毫秒值（当前的时间距离 1970年1月1日）
+    //时间戳
+    //现在我们主要用来计算
+    //现在要计算 2022年5月17日 20：20：20
+    //假如现在有一个商品 开始抢购的时间 2022年5月17日 20：20：20
+    //显示出 02天20小时3分15秒
+    //+new Date()表示创建一个日期对象 该对象表示当前时间距离1970年1月1日的毫秒值
+    let date1 = +new Date("2022-5-18 23:50:50"); //2022年5月17日 20：20：20这个时间点的毫秒值
+    let date2 = +new Date();//当前时间的毫秒值
+    let date3 = date1 - date2
+    let totalSeconds = date3 / 1000;
+    //计算天数
+    let day = totalSeconds / 60 / 60 / 24;
+    alert(parseInt(day));
+    //计算小时
+    let hour = totalSeconds / 60 / 60 % 24;
+    alert(parseInt(hour));
+    //计算分
+    let minute = totalSeconds / 60 % 60
+    alert(parseInt(minute));
+    //计算秒
+    let second = totalSeconds % 60;
+    alert(parseInt(second));
+</script>
+</html>

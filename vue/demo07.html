@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+<div id="div">
+    <div>{{content}}</div>
+    <button @click="change()">来啊 点我啊</button>
+    <button v-on:click="change()">来啊 点我啊</button>
+    <input type="text" v-on:blur="show()">
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            content: "压机否"
+        },
+        methods: {
+            change() {
+                this.content = "aha";
+            },
+            show() {
+                alert(this.content);
+            }
+        }
+    });
+</script>
+</html>

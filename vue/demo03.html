@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="div">
+        <div>{{msg}}</div>
+        <div v-html="msg2"></div>
+    </div>
+
+</body>
+<script>
+
+     let vue = new Vue({
+         el : "#div",
+         data : {
+             msg : "<b>压机否</b>",
+             msg2 : "<b>压机否1</b>"
+         }
+     });
+
+</script>
+</html>

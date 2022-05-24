@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    let arr =['王二麻子',"二狗子","大壯","铁锤"];
+    //获取[3，100]的随机数
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    let i = 1;
+    while(i<1000){
+        console.log(arr[getRandomIntInclusive(0,arr.length-1)]);
+        i++;
+    }
+</script>
+
+</html>

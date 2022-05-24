@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //格式化日期
+    function formatDate(targetDate) {
+        let fullYear = targetDate.getFullYear();
+        let month = targetDate.getMonth();
+        let date = targetDate.getDate();
+        let hours = targetDate.getHours();
+        let minutes = targetDate.getMinutes();
+        let seconds = targetDate.getSeconds();
+        return fullYear + "年" + (month + 1) + "月" + date + "日" + " " + hours + "时" + minutes + "分" + seconds + "秒"
+    }
+
+
+</script>
+</html>

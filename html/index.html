@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+<body>
+<br />
+<br />
+<div align="center">
+    姓名:<input id="nameId" type="text" />
+    性别:<input id="genderId" type="text" />
+    年龄:<input id="ageId" type="text" />
+    <input type="button" value="添加" onclick="add()" />
+</div>
+<br />
+<br />
+<h2 align="center">用户信息</h2>
+<table id="user" border="1" cellspacing="0" align="center">
+    <thead>
+    <th>序号</th>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>操作</th>
+    </thead>
+</table>
+</body>
+<script>
+    let i = 0
+    function add(){
+        //创建一行
+        let trEle = document.createElement("tr");
+        //创建五列
+        let numTdEle = document.createElement("td");
+        let nameTdEle = document.createElement("td");
+        let genderTdEle = document.createElement("td");
+        let ageTdEle = document.createElement("td");
+        let operationTdEle = document.createElement("td");
+
+        //在这五列中添加内容
+        numTdEle.innerText = ++i;
+        nameTdEle.innerText = document.getElementById("nameId").value;
+        genderTdEle.innerText = document.getElementById("genderId").value;
+        ageTdEle.innerText = document.getElementById("ageId").value;
+        operationTdEle.innerHTML = "<a href='#'>删除</a>";
+
+        //把列添加到行里面
+        trEle.appendChild(numTdEle);
+        trEle.appendChild(nameTdEle);
+        trEle.appendChild(genderTdEle);
+        trEle.appendChild(ageTdEle);
+        trEle.appendChild(operationTdEle);
+        //把这一行添加到表格中
+        let userTable = document.getElementById("user");
+        userTable.appendChild(trEle);
+    }
+
+</script>
+
+<!--<script src="js/table.js"></script>-->
+</html>

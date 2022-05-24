@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+
+<script>
+    console.log(1);
+    //使用函数的步骤
+        //1.声明函数
+        //2.调用函数
+    //如果一个函数 仅仅只是声明 没有进行调用 不会执行 不会有任何效果
+    function a(){
+        console.log(111);
+        b();
+        console.log(222);
+    }
+    //如何调用一个函数
+    //函数的名称();
+    a();
+    b();//在你的整个网页里面去找 有没有名称叫b的这个函数 如果有 就可以进行调用 如果没有呢？
+    function b(){
+        console.log("进入B这个函数")
+        console.log(222);
+        console.log("函数执行结束")
+    }
+</script>
+</html>

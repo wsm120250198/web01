@@ -1,0 +1,11 @@
+.el-menu-demo {
+    background-color: #545c64;
+    text-color: white;
+    active-text-color: #ffd04b;
+    margin-left: auto;
+}
+.el-header-img{
+    width: 100px;
+    margin-top: 20px;
+}
+

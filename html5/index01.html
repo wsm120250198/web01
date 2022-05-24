@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+    <!--
+        之前我们写的代码
+        定义一个变量
+        let 变量的名称 = 变量的值;
+        let name = 'zs';
+        let age = 10;
+
+        数组
+        let nameArr = ['zs','ls','ww'];
+        现在我们如果需要描述某个人的信息 应该如何去描述 这个时候就需要使用到对象
+        let name = 'zs';
+        let age = 10;
+        let gender = '男';
+    -->
+</body>
+<script>
+    //定义一个对象 对象的名称为 obj
+    //对象里面的属性名称是 name,age,gender
+    //对象里面name这个属性的值是zs
+    //age这个属性的值是18
+    //gender这个属性的值是男
+    let obj = {name:'zs',age:18,gender:'男'};
+    let plane = {position_x:'100px',position_y:'100px',color:'pink'};
+    //在页面中弹出 obj这个对象的name的属性的值
+    //alert(obj.name);
+    //alert(obj['name']);
+    //在页面中弹出 obj这个对象的age的属性的值
+    //alert(obj.age);
+    //alert(obj['age']);
+    //在页面中弹出 obj这个对象的gender的属性的值
+    //alert(obj.gender);
+    //alert(obj.['gender'])
+    for (let key in plane) {
+        alert(key);// 这里是循环plane这个对象所有属性的名称
+        alert(plane[key]);//这里是打印plane这个对象所有属性的值
+    }
+</script>
+</html>

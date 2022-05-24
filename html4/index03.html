@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    //构造方法 构造方法的名称 首字母大写开头
+    function User(name, age, gender) {
+        //定义对象的属性
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        //定义对象的方法
+        this.run = function () {
+            alert("你的对象跑路了" + this.name);
+        }
+        this.jump = function () {
+            alert("你的对象跳了" + this.name);
+        }
+    }
+    //创建两个对象 zs ls
+    //new + 构造方法的名称 表示调用构造方法  目的是为了创建对象
+    //在每个对象里面 都会有一个东西 这个东西就是this 它的作用是指向自己 他就是一个内存地址
+    let zs = new User('zs', 18, '男');
+    let ls = new User('ls', 28, '女');
+    alert(zs.name);
+    alert(zs.age);
+    zs.run();
+    zs.jump();
+    for (let zsKey in zs) {
+        alert(zsKey);
+        alert(zs[zsKey]);
+    }
+</script>
+</html>

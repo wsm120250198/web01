@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //声明函数的语法
+    /*  function 函数名(参数1,参数2...参数n){
+        函数体
+      }*/
+    //调用函数
+    /**
+     * 函数的名称(参数1,参数2...参数n);
+     */
+
+    //函数自己调用自己 就是递归
+
+    /* function m1(){
+       m1();
+     }
+    m1();*/
+    /**
+     * 使用 递归 计算 1 + 2 + ...+100的和   5050
+     */
+    function getSum(end) {
+        if (end == 1) {
+            return 1;
+        } else {
+            return end + getSum(end - 1);
+        }
+    }
+    let sum = getSum(3);
+    alert(sum);
+</script>
+</html>

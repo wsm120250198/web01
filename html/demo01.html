@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+快递单号：<input type="text">
+<input id="queryBtn" type="button" value="查询" onclick="queryExpress();">
+</body>
+<script>
+
+    function queryExpress() {
+        let url = "https://way.jd.com/fegine/kdwlc";
+        $.ajax({
+            url: url,
+            type:"post",
+            data: {no: "318256014753540",appkey:"2860f37f317bea1a36192c3ae4f536d6"},
+            dataType: 'jsonp',
+            success: function (data) {
+                alert(JSON.stringify(data));
+            }
+        });
+    }
+
+</script>
+</html>

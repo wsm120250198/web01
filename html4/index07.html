@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p><span id="startTime">2022-05-30 22:00</span></p>
+<p><input type="button" value="即将开始" onclick="changeTime()"/></p>
+<p><span id="showTime"></span></p>
+</body>
+<script>
+    let showTimeSpan = document.getElementById("showTime");
+    //获取开始秒杀的时间
+    let startTime = document.getElementById("startTime").innerText;
+
+    function changeTime(){
+        setInterval("countDown()",1000);
+    }
+    //倒计时的函数
+    function countDown() {
+        //调用函数 计算剩余的时间
+        showTimeSpan.innerText = caclTime(startTime);
+    }
+    //计算时间
+    function caclTime(startTime) {
+        //秒杀开始的时间
+        let d1 = +new Date(startTime);
+        //当前的时间
+        let currentTime = +new Date();
+        //剩余的时间
+        let totalTime = (d1 - currentTime) / 1000;
+        //计算剩余的天
+        let d = parseInt(totalTime / 60 / 60 / 24) < 10 ? ("0" + parseInt(totalTime / 60 / 60 / 24)) : parseInt(totalTime / 60 / 60 / 24);
+        //计算剩余的小时
+        let h = parseInt(totalTime / 60 / 60 % 24) < 10 ? ("0" + parseInt(totalTime / 60 / 60 % 24)) : parseInt(totalTime / 60 / 60 % 24);
+        //计算剩余的分钟
+        let m = parseInt(totalTime / 60 % 60) < 10 ? ("0" + parseInt(totalTime / 60 % 60)) : parseInt(totalTime / 60 % 60);
+        //计算剩余的秒
+        let s = parseInt(totalTime % 60) < 10 ? ("0" + parseInt(totalTime % 60)) : parseInt(totalTime % 60);
+        // 09天05小时30分05秒
+        return d + "天" + h + "小时" + m + "分钟" + s + "秒";
+    }
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="div">
+    <div v-if="num % 3 == 0">div1</div>
+    <div v-else-if="num % 3 == 1">div2</div>
+    <div v-else="num % 3 == 2">div3</div>
+
+    <div v-show="flag">div4</div>
+</div>
+
+</body>
+<script>
+    let vm = new Vue({
+        el: "#div",
+        data: {
+            num: 5,
+            flag: false
+        }
+    });
+</script>
+</html>

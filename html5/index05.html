@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //当前的时间对象
+    let targetDate1 = new Date();
+    let arr = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+    let day = targetDate1.getDay();
+    alert(arr[day]);
+
+    let targetDate2 = new Date("2000-01-02 12:00:30");
+
+    let formatTime1 = getFormatTime(targetDate1);
+    let formatTime2 = getFormatTime(targetDate2);
+    //console.log(formatTime1);
+    //console.log(formatTime2);
+
+    //格式化日期
+    function getFormatTime(targetDate) {
+        let year = targetDate.getFullYear();
+        let month = (targetDate.getMonth() + 1) < 10 ? "0" + (targetDate.getMonth() + 1) : (targetDate.getMonth + 1);
+        let date = targetDate.getDate() < 10 ? "0" + targetDate.getDate() : targetDate.getDate();
+        let hours = targetDate.getHours() < 10 ? "0" + targetDate.getHours() : targetDate.getHours();
+        let minutes = targetDate.getMinutes() < 10 ? "0" + targetDate.getMinutes() : targetDate.getMinutes();
+        let seconds = targetDate.getSeconds() < 10 ? "0" + targetDate.getSeconds() : targetDate.getSeconds();
+        return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+    }
+
+    //日期的计算
+    let d1 = +new Date();
+    let d2 = +new Date("2022-05-20 21:20:20");
+    //1秒=1000毫秒
+    //1个小时=60分钟
+    //1分钟=60秒
+</script>
+</html>

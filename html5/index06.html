@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="startTimeId">2022-05-20 22:00</span>
+<input type="button" value="即将开始" onclick="showCountDownEle();"/>
+<span id="countDownId" style="display:none;"></span>
+</body>
+<script>
+    //获取到倒计时开始的时间
+    let startTime = document.getElementById("startTimeId").innerText;
+    let countDownSpan = document.getElementById("countDownId");
+
+    //显示倒计时的元素
+    function showCountDownEle() {
+        countDownSpan.style.display = "block";
+        //改变时间的函数
+        setInterval("changeCountDownSpan(startTime)", 1000);
+    }
+
+    //改变时间的函数
+    function changeCountDownSpan(startTime) {
+        //当前时间的毫秒值
+        let currentTime = +new Date();
+        //开始时间的毫秒值
+        startTime = +new Date(startTime);
+        //计算剩余的秒数
+        let totalSecond = (startTime - currentTime) / 1000;
+        //计算剩余的天数 小时数 分钟数 秒数
+        let d = parseInt(totalSecond / 60 / 60 / 24);
+        let h = parseInt(totalSecond / 60 / 60 % 24);
+        let m = parseInt(totalSecond / 60 % 60);
+        let s = parseInt(totalSecond % 60);
+        countDownSpan.innerText = ("剩余的时间为：" + d + "天" + h + "小时" + m + "分钟" + s + "秒");
+    }
+</script>
+</html>

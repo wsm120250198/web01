@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //如果我们需要使用js 来描述一个变量的时候
+    let age = 10;
+    //如果我们需要进行注册 填下用户的信息
+    //如果我们使用变量的方式存储用户的信息 使用的变量会非常的多
+    //我们可以使用对象的方式
+    //let zs = {name:'zs',age:10,gender:'男'}
+    //定义了一个对象 对象的名称是zs 对象的属性有 name,age,gender
+    //属性的值 zs 10 nv
+    //let zs = {name:'zs',age:10,gender:'女'};
+    //let ls = {name:'ls',age:20,gender:'男'};
+    //使用对象的属性
+    //alert(zs.name);//zs
+    //alert(ls['name']);//ls
+
+    //定义了一个对象 对象的名称是 ww  属性是 name,age,gender
+    //方法：run
+    let ww = {
+        name: 'ww', age: 20, gender: '男',
+        run: function () {
+            alert(ww.name + "在跑");
+            alert(name + "在跑");
+            alert(this.name + "在跑");
+        },
+        jump: function () {
+            alert(ww.name + "在跳");
+            alert(name + "在跳");
+            alert(this.name + "在跳");
+        }
+    };
+   // alert(ww.name);
+   // //调用方法
+   // ww.run();
+   // ww.jump();
+    //循环对象
+    for (let key in ww) {
+        alert("属性的名称："+key);
+        alert("属性的值："+ww[key]);
+    }
+</script>
+</html>
